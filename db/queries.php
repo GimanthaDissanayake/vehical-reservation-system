@@ -1,0 +1,4 @@
+<?php
+    //Create DB
+    
+?>
