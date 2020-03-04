@@ -1,2 +1,2 @@
-# simple_ums
-This is a simple User Management System designed using php and mySQL
+# VEHICLE_RESERVATION_SYSTEM
+This is a simple Vehicle Reservation System designed using bootstrap, php and mySQL
