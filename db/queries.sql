@@ -6,7 +6,7 @@ CREATE TABLE User (userId INT AUTO_INCREMENT PRIMARY KEY,username VARCHAR(20),pa
             
 CREATE Customer cart (user_id INT,nic VARCHAR(20),itemcode INT,sellerid INT);
             
-
+insert into User('username','password','role') values('admin','21232f297a57a5a743894a0e4a801fc3','admin');
 
     /*Database Structure
     User ->user_id,username,password,role
