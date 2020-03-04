@@ -4,9 +4,12 @@ CREATE TABLE Vehicle (vehicleId INT AUTO_INCREMENT PRIMARY KEY,regNo VARCHAR(20)
             
 CREATE TABLE User (userId INT AUTO_INCREMENT PRIMARY KEY,username VARCHAR(20),password VARCHAR(100),role VARCHAR(20));
             
-CREATE Customer cart (user_id INT,nic VARCHAR(20),itemcode INT,sellerid INT);
+CREATE Table Customer(nic VARCHAR(20) NOT NULL PRIMARY KEY,name VARCHAR(100),address VARCHAR(300),telephone INT, userId INT, FOREIGN KEY(userId) REFERENCES User(userId));
             
 insert into User('username','password','role') values('admin','21232f297a57a5a743894a0e4a801fc3','admin');
+
+insert into User('username','passowrd','role') values('abc','abc','customer');
+insert into Customer values('nic','namesda','addressafdad','231241',$mysqli_insert_id($conn),)
 
     /*Database Structure
     User ->user_id,username,password,role
