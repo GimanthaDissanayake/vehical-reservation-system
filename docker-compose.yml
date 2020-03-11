@@ -1,0 +1,20 @@
+version: '3'
+services:
+  web:
+    image: nginx:alpine
+    ports:
+      - "4000:80"
+    volumes:
+      - ./public:/public
+      - ./conf.d:/etc/nginx/conf.d
+    networks:
+      - nginxphp
+  php:
+    image: php:7.4-fpm-alpine
+    volumes:
+      - ./public:/public
+    networks:
+      - nginxphp
+networks:
+  nginxphp:
+    driver: bridge
