@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="styles.css" rel="stylesheet">
+    <title>Quick Inquiry</title>
+</head>
+<body class="bg-light">
+
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">RentX</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Our Vehicle Fleet</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Our Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact Us</a>
+                </li>
+            </ul>
+            <form class="form-inline mt-2 mt-md-0">
+                <button class="btn btn-outline-success my-2 my-sm-0" id="btnLogin" type="submit">Login</button>
+            </form>
+        </div>
+    </nav>
+</header>
+    <div class="container wapper">
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="mb-3">Quick Enquiry</h4>
+                <form class="needs-validation" novalidate>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label rel="desigantion">Title</label>
+                            <select class="custom-select">
+                                <option selected value="1">Mr.</option>
+                                <option value="2">Rev.</option>
+                                <option value="3">Dr.</option>
+                                <option value="4">Mrs.</option>
+                                <option value="5">Miss</option>
+                            </select>
+                        </div>
+                        <div class="col-md-5 mb-3">
+                            <label for="firstName">First name</label>
+                            <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                            <div class="invalid-feedback">
+                                Valid first name is required.
+                            </div>
+                        </div>
+                        <div class="col-md-5 mb-3">
+                            <label for="lastName">Last name</label>
+                            <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                            <div class="invalid-feedback">
+                                Valid last name is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="Contact">Contact Number</label>
+                            <input type="text" class="form-control" name="contactNum" id="Contact"
+                                   placeholder="Contact Number" required>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label for="email">Email <span class="text-muted">(Optional)</span></label>
+                            <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                            <div class="invalid-feedback">
+                                Please enter a valid email address for shipping updates.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label for="pickup">Pickup Location</label>
+                            <input type="text" class="form-control" name="pickuploc" id="pickup" required>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label for="dropoff">Dropoff Location</label>
+                            <input type="email" class="form-control" id="dropoff" name="dropoffloc" required>
+                            <div class="invalid-feedback">
+                                Please enter a valid email address for shipping updates.
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="serviceTy">Service Type</label>
+                            <select class="custom-select" id="serviceTy" name="serviceType">
+                                <option selected value="1">Self Drive</option>
+                                <option value="2">Tours</option>
+                                <option value="3">Wedding/Event</option>
+                                <option value="4">With Driver</option>
+                                <option value="5">Airport /City Transfers</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-6 mb-3">
+                            <label for="vType">Vehicale Type </label>
+                            <select class="custom-select" id="vType" name="serviceType">
+                                <option selected value="1">Self Drive</option>
+                                <option value="2">Tours</option>
+                                <option value="3">Wedding/Event</option>
+                                <option value="4">With Driver</option>
+                                <option value="5">Airport /City Transfers</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
+                        <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-5 mb-3">
+                            <label for="country">Country</label>
+                            <select class="custom-select d-block w-100" id="country" required>
+                                <option value="">Choose...</option>
+                                <option>United States</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select a valid country.
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="state">State</label>
+                            <select class="custom-select d-block w-100" id="state" required>
+                                <option value="">Choose...</option>
+                                <option>California</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please provide a valid state.
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="zip">Zip</label>
+                            <input type="text" class="form-control" id="zip" placeholder="" required>
+                            <div class="invalid-feedback">
+                                Zip code required.
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<!-- FOOTER -->
+<footer class="container">
+    <p class="float-right"><a href="#">Back to top</a></p>
+    <p>&copy; 2017-2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+</footer>
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+</html>
