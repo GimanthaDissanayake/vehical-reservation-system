@@ -10,5 +10,5 @@
     }
 
     if(!mysqli_select_db($conn,'VRS'))
-			die("Selecting database failed: " . mysqli_error()); 
+                        die("Selecting database failed: " . mysqli_error()); 
 ?>
