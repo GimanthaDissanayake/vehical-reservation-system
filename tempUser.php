@@ -4,10 +4,23 @@
     include("db/connection.php");
     include("Customer.php");
 
-    $c = new Customer('123v','123123','fff','mmm','llll','kdwath','1231231231');
-    $c->insertCustomer('testUser','testPw');
+    $c = new Customer('12345v','456456','fff123','mmm12','llll12','kdwath2','0713197773');
+    //$c->insertCustomer('testUser','testPw');
+    //$c->updateCustomer(2,'2345v','123123','fff','mmm','llll','kdwath','1231231231');
+    //print_r($c->selectCustomer(3));
+    /*
+    $result = $c->selectAllCustomers();
+    
+    if (mysqli_num_rows($result) > 0) {
+        // output data of each row
+        while($row = mysqli_fetch_assoc($result)) {
+            print_r($row);
+        }
+    } else {
+        echo "0 results";
+    }*/
 
-
+/*
     function createUser(){
         if(isset($_POST['createUser'])){
             $username = $_POST['username'];
@@ -36,7 +49,7 @@
             $username = $_POST['username'];
             $password = md5($_POST['password']);
             $role = 'customer';
-    /*
+    
             $sql = "INSERT INTO User(username,password,role) VALUES('$username','$password','$role')";        
             if(!mysqli_query($conn,$sql)){
                 die("Failed to create user :" . mysqli_connect_error());
@@ -47,7 +60,7 @@
                 if(!mysqli_query($conn,$sql))
                     die("Failed to create user :" . mysqli_connect_error());
             }             
-            */
+            
         }
     }
 
@@ -57,6 +70,6 @@
 
     function deleteUser(){
 
-    }
+    }*/
 
 ?>
