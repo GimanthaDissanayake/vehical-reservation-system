@@ -2,9 +2,14 @@
     session_start();
     
     include("db/connection.php");
-    include("Customer.php");
+    //require("Customer.php");
+    require("User.php");
 
-    $c = new Customer('12345v','456456','fff123','mmm12','llll12','kdwath2','0713197773');
+    //$u = new User();
+    //echo $u->checkPassword(14);
+    //$u->deleteUser(17);
+
+    //$c = new Customer('444v','456456','fff123','mmm12','llll12','kdwath2','0713197773');
     //$c->insertCustomer('testUser','testPw');
     //$c->updateCustomer(2,'2345v','123123','fff','mmm','llll','kdwath','1231231231');
     //print_r($c->selectCustomer(3));

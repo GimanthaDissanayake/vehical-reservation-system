@@ -1,6 +1,6 @@
 <?php
     include("db/connection.php");
-    include("User.php");
+    require("User.php");
 
 	class Customer{
 		//properties
@@ -30,7 +30,7 @@
 			$sql = "SELECT * FROM Customer WHERE isDeleted='0'";
 			$result = mysqli_query($conn, $sql);
 			if(!$result)
-				die("Failed to select Customer :" . mysqli_error($conn));
+				die("Failed to select Customers :" . mysqli_error($conn));
 			return $result;
 		}
 
@@ -40,7 +40,7 @@
 			$sql = "SELECT * FROM Customer WHERE customerId='$customerId' AND isDeleted='0'";
 			$result = mysqli_query($conn,$sql);
 			if(!$result)
-				die("Failed to delete Customer :" . mysqli_error($conn));
+				die("Failed to select Customer :" . mysqli_error($conn));
 			return mysqli_fetch_assoc($result);
 		}
 
@@ -81,7 +81,7 @@
 			$sql = "SELECT userId FROM Customer WHERE customerId='$id'";
 			$result = mysqli_query($conn,$sql);
 			if(!$result)
-				die("Failed to delete Customer :" . mysqli_error($conn));
+				die("Failed to select userId :" . mysqli_error($conn));
 			$row = mysqli_fetch_row($result);
 			$uid = $row[0];
 
@@ -89,9 +89,8 @@
 			if(!mysqli_query($conn,$sql))
 				die("Failed to delete Customer :" . mysqli_error($conn));
 							
-			$sql = "UPDATE User SET isDeleted='1' WHERE UserId='$uid'";				
-			if(!mysqli_query($conn,$sql))
-				die("Failed to delete Customer :" . mysqli_error($conn));
+			$u = newUser();
+			$u->deleteUser($uid);
 		}
 	}
 ?>
