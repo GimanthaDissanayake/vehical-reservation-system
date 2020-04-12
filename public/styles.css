@@ -50,3 +50,10 @@ body {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
+.wapper{
+    margin-top: 70px;
+}
+
+.button-row{
+    margin-top: 20px;
+}
