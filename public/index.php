@@ -18,12 +18,15 @@
     <!--    <link href="styles.css" rel="stylesheet">-->
     <!-- Custom styles for this template -->
 
-    <link href="carousel.css" rel="stylesheet">
+    <link href="styles/carousel.css" rel="stylesheet">
 
 
     <title>Rent a Car by Vivoxa Labs</title>
 </head>
 <body class="text-center">
+<?php
+    include("./db/connection.php");
+?>
 <header>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <a class="navbar-brand" href="#">RentX</a>
