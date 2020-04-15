@@ -1,20 +1,35 @@
 version: '3'
 services:
+
+  php:
+    build:
+      context: php-fpm
+    ports:
+    - 9000:9000
+    volumes:
+      - ./public:/var/www/html
+      - ./php-fpm/www.conf:/usr/local/etc/php-fpm.d/www.conf
+    environment:
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
   web:
     image: nginx:alpine
     ports:
       - "4000:80"
     volumes:
-      - ./public:/public
+      - ./public:/var/www/html
       - ./conf.d:/etc/nginx/conf.d
-    networks:
-      - nginxphp
-  php:
-    image: php:7.4-fpm-alpine
-    volumes:
-      - ./public:/public
-    networks:
-      - nginxphp
-networks:
-  nginxphp:
-    driver: bridge
+    restart: always
+    depends_on:
+      - php
+  mysql:
+    image: mysql:5.7
+    ports:
+    - 3306:3306
+    depends_on:
+      - php
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
