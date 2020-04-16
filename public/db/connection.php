@@ -1,5 +1,5 @@
 <?php
-    $servername = "localhost";
+    $servername ="mysql";
     $username = "mysqluser";
     $password = "mysqluserpwd";
 
@@ -8,4 +8,5 @@
     if (!$conn) {
             die("Connection failed: " . mysqli_connect_error());
     }
+    echo "Successfully connected".PHP_EOL;
 ?>
