@@ -1,3 +1,32 @@
+<?php
+    session_start();
+
+    include("db/connection.php");
+
+    $message='';    //message to display if login credentials are incorrect
+
+    if(isset($_POST['submit'])){
+        $username = $_POST["username"];
+        $password = md5($_POST["password"]);
+        $sql = "SELECT * FROM User WHERE username='$username' AND password='$password'";
+        $result = mysqli_query($conn, $sql);
+        print_r($conn);
+        if (mysqli_num_rows($result) > 0) {
+            $row = mysqli_fetch_assoc($result);
+            $_SESSION['userId']=$row['userId'];
+            $_SESSION['username']=$row['username'];
+            $_SESSION['role']=$row['role'];
+            if ($row['role']=='admin') {
+                header('Location:admin.php');
+            }
+            else if ($row['role']=='customer') {
+                header('Location:index.php');
+            }
+        } else {
+            $message='Enter valid Username/Password';
+        }
+    }
+?>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -15,33 +44,6 @@
 </head>
 <body class="text-center">
 <?php
-session_start();
-
-include("db/connection.php");
-
-$message='';    //message to display if login credentials are incorrect
-
-if(isset($_POST['submit'])){
-    $username = $_POST["username"];
-    $password = md5($_POST["password"]);
-    $sql = "SELECT * FROM User WHERE username='$username' AND password='$password'";
-    $result = mysqli_query($conn, $sql);
-    print_r($conn);
-    if (mysqli_num_rows($result) > 0) {
-        $row = mysqli_fetch_assoc($result);
-        $_SESSION['userId']=$row['userId'];
-        $_SESSION['username']=$row['username'];
-        $_SESSION['role']=$row['role'];
-        if ($row['role']=='admin') {
-            header('Location:admin.php');
-        }
-        else if ($row['role']=='customer') {
-            header('Location:index.php');
-        }
-    } else {
-        $message='Enter valid Username/Password';
-    }
-}
 ?>
 
 <form class="form-signin" action="./login.php" method="post">
@@ -60,19 +62,6 @@ if(isset($_POST['submit'])){
 </form>
 <button class="btn btn-lg btn-secondary " name="signup" type="submit">Sign up</button>
 
-<div class="div-form container-fluid" id="signupform" >
-    <form class="form-signin"   method="post" action="./signup.php">
-        <input class="form-control" type="text" name="username" placeholder="Username" required autofocus>
-        <input class="form-control" type="password" name="password" required placeholder="Password">
-        <input type="password" class="form-control" name="conf-pass" required placeholder="Re-enter password">
-        <select class="custom-select" name="role">
-            <option selected value="1">Self Drive</option>
-            <option value="2">With Driver</option>
-            <option value="3">Wedding Ride</option>
-        </select>
-        <button type="button" class=" btn btn-success " name="signup" type="submit">Sign up</button>
-    </form>
-</div>
 
 <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
 <!-- Placed at the end of the document so the pages load faster -->

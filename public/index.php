@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<?php
+    include("db/connection.php");
+?>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -24,9 +26,6 @@
     <title>Rent a Car by Vivoxa Labs</title>
 </head>
 <body class="text-center">
-<?php
-    include("./db/connection.php");
-?>
 <header>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <a class="navbar-brand" href="#">RentX</a>
