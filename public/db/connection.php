@@ -15,7 +15,7 @@
             die("Connection failed: " . mysqli_connect_error());
     }
 //<<<<<<< HEAD:public/db/connection.php
-    echo "Successfully connected".PHP_EOL;
+    //echo "Successfully connected";
 //=======
 
     if(!mysqli_select_db($conn,'VRS'))
