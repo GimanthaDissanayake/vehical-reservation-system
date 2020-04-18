@@ -1,5 +1,5 @@
 <?php
-include("../db/connection.php");
+include("./db/connection.php");
 require("User.php");
 
 class Customer{
@@ -9,16 +9,18 @@ class Customer{
     private $FName;
     private $MName;
     private $LName;
+    private $email;
     private $address;
     private $telephone;
 
     //constructor
-    function __construct($nic,$licenseNumber,$FName,$MName,$LName,$address,$telephone){
+    function __construct($nic,$licenseNumber,$FName,$MName,$LName,$email,$address,$telephone){
         $this->nic = $nic;
         $this->licenseNumber = $licenseNumber;
         $this->FName = $FName;
         $this->MName = $MName;
         $this->LName = $LName;
+        $this->email = $email;
         $this->address = $address;
         $this->telephone = intVal($telephone);
     }
@@ -47,8 +49,8 @@ class Customer{
     public function insertCustomer($username,$password){
         global $conn;
 
-        $u = new User($username,$password);
-        $u->insertUser();
+        $u = new User();
+        $u->insertUser($username,$password);
 
         $last_id = mysqli_insert_id($conn);
 

@@ -39,7 +39,7 @@
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Our Vehicle Fleet</a>
+                    <a class="nav-link" href="./fleet.html">Our Vehicle Fleet</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Our Services</a>
@@ -49,11 +49,11 @@
                 </li>
             </ul>
             <form class="form-inline mt-2 mt-md-0">
-                <button class="btn btn-outline-success my-2 my-sm-0" id="btnLogin" type="button">Login</button>
+            <a href="./login.php"><button class="btn btn-outline-success my-2 my-sm-0" id="btnLogin" type="button">Login</button></a>
             </form>
         </div>
     </nav>
-</header>
+</header>formform
 <div class="query-wap">
 
     <form action="" method="">

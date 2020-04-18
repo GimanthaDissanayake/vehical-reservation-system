@@ -1,5 +1,5 @@
 <?php
-    include("../db/connection.php");
+    include("./db/connection.php");
 
 class User
 {
@@ -10,22 +10,13 @@ class User
     //constructor
     function __construct()
     {
-        $get_arguments = func_get_arg();
-        $num_of_arguments = func_num_args();
-
-        if($num_of_arguments>0){
-            $this->__construct2($get_arguments[0],$get_arguments[1]);
-        }
-    }
-
-    function __construct2($usename,$password){
-        $this->userName=$usename;
-        $this->password=$password;
     }
 
     //methods
 
-    public function insertUser(){
+    public function insertUser($usename,$password){
+        $this->userName=$usename;
+        $this->password=$password;
         global $conn;
         $sql = "INSERT INTO User(username,password,role) VALUES('$this->userName','$this->password','$this->role')";
         if(!mysqli_query($conn,$sql)){

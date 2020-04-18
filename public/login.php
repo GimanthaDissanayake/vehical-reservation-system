@@ -1,15 +1,17 @@
 <?php
     session_start();
 
-    require("db/connection.php");
+    require("./db/connection.php");
 
     $message='';    //message to display if login credentials are incorrect
 
     if(isset($_POST['submit'])){
         $username = $_POST["username"];
         $password = md5($_POST["password"]);
+        echo "$password";
         $sql = "SELECT * FROM User WHERE username='$username' AND password='$password'";
         $result = mysqli_query($conn, $sql);
+        print_r($result);
         if (mysqli_num_rows($result) > 0) {
             $row = mysqli_fetch_assoc($result);
             $_SESSION['userId']=$row['userId'];
@@ -42,13 +44,40 @@
     <title>Rent a Car by Vivoxa Labs</title>
 </head>
 <body class="text-center">
-    <form class="form-signin" action="./login.php" method="POST">
+<!-- <header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">RentX</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.php">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Our Vehicle Fleet</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Our Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header> -->
+<br><br><br>
+<div class="container-fluid">
+<form class="form-signin" action="#" method="POST">
         <img class="mb-4" src="images/rc_logo.png" alt="" width="72" height="72">
-        <h1 class="h2 mb-3 font-weight-normal">Sign in to your account</h1>
+        <h1 class="h2 mb-2 font-weight-normal">Sign in to your account</h1>
         <label for="username" class="sr-only">Username</label>
         <input type="text" name="username" class="form-control" placeholder="Username" required autofocus>
         <label for="password" class="sr-only">Password</label>
-        <input type="password" id="password" class="form-control" placeholder="Password" required>
+        <input name="password" type="password" id="password" class="form-control" placeholder="Password" required>
         <div class="checkbox mb-3">
             <label>
                 <input type="checkbox" value="remember-me"> Remember me
@@ -57,7 +86,8 @@
         <button class="btn btn-lg btn-primary btn-block" id="signup-toggle" name="submit" type="submit">Sign in</button>
     </form>
     <p>Don't have an account? <a href="./signup.php">Sign up</a></p>
-
+</div>
+    
 
     <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
     <!-- Placed at the end of the document so the pages load faster -->
