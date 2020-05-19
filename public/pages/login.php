@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    require("./db/connection.php");
+    require("../db/connection.php");
 
     $message='';    //message to display if login credentials are incorrect
 
@@ -21,7 +21,7 @@
                 header('Location:admin.php');
             }
             else if ($row['role']=='customer') {
-                header('Location:index.php');
+                header('Location:../index.php');
             }
         } else {
             $message='Enter valid Username/Password';
@@ -39,7 +39,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!--    &lt;!&ndash; Custom styles for this template &ndash;&gt;-->
-    <link href="./styles/styles.css" rel="stylesheet" type="text/css">
+    <link href="../styles/styles.css" rel="stylesheet" type="text/css">
 
     <title>Rent a Car by Vivoxa Labs</title>
 </head>
@@ -72,7 +72,7 @@
 <br><br><br>
 <div class="container-fluid">
 <form class="form-signin" action="#" method="POST">
-        <img class="mb-4" src="images/rc_logo.png" alt="" width="72" height="72">
+        <img class="mb-4" src="../images/rc_logo.png" alt="" width="72" height="72">
         <h1 class="h2 mb-2 font-weight-normal">Sign in to your account</h1>
         <label for="username" class="sr-only">Username</label>
         <input type="text" name="username" class="form-control" placeholder="Username" required autofocus>
@@ -100,6 +100,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
-    <script src="js/signup.js"></script>
+    <script src="../js/signup.js"></script>
 </body>
 </html>

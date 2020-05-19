@@ -1,6 +1,6 @@
 <?php
-include("./db/connection.php");
-require("Customer.php");
+include("../db/connection.php");
+require("../classes/Customer.php");
 
 if(isset($_POST['submit'])){
     $c = new Customer($_POST["nic"],$_POST["licenseNumber"],$_POST["FName"],$_POST["MName"],$_POST["LName"],$_POST["email"],$_POST["address"],$_POST["telephone"]);
@@ -9,7 +9,7 @@ if(isset($_POST['submit'])){
     $password = md5($_POST["password"]);
     
     $c->insertCustomer($username,$password);
-    header('Location:login.php');
+    header('Location:../login.php');
     // $sql = "INSERT INTO User(username,password,role) VALUES('$username','$password','$role')";
     // if(!mysqli_query($conn,$sql)){
     //     die("Failed to create user: ".mysqli_error($conn));
@@ -31,13 +31,13 @@ if(isset($_POST['submit'])){
     <!-- styles for icons -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
     <!--    &lt;!&ndash; Custom styles for this template &ndash;&gt;-->
-    <link href="./styles/styles.css" rel="stylesheet" type="text/css">
+    <link href="../styles/styles.css" rel="stylesheet" type="text/css">
 
     <title>Rent a Car by Vivoxa Labs</title>
 </head>
 <body class="text-center">
 
-    <!-- <header>
+    <header>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
             <a class="navbar-brand" href="./index.html">RentX</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
@@ -47,10 +47,10 @@ if(isset($_POST['submit'])){
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="./index.php">Home</a>
+                        <a class="nav-link" href="../index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./fleet.html">Our Vehicle Fleet</a>
+                        <a class="nav-link" href="../fleet.html">Our Vehicle Fleet</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Our Services</a>
@@ -61,7 +61,7 @@ if(isset($_POST['submit'])){
                 </ul>
             </div>
         </nav>
-    </header> -->
+    </header>
 
     <br><br>
 
@@ -165,6 +165,6 @@ if(isset($_POST['submit'])){
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
-    <script src="js/signup.js"></script>
+    <script src="../js/signup.js"></script>
 </body>
 </html>

@@ -49,7 +49,7 @@
                 </li>
             </ul>
             <form class="form-inline mt-2 mt-md-0">
-            <a href="./login.php"><button class="btn btn-outline-success my-2 my-sm-0" id="btnLogin" type="button">Login</button></a>
+            <a href="./pages/login.php"><button class="btn btn-outline-success my-2 my-sm-0" id="btnLogin" type="button">Login</button></a>
             </form>
         </div>
     </nav>
