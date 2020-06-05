@@ -9,7 +9,7 @@ if(isset($_POST['submit'])){
     $password = md5($_POST["password"]);
     
     $c->insertCustomer($username,$password);
-    header('Location:../login.php');
+    header('Location:../pages/login.php');
     // $sql = "INSERT INTO User(username,password,role) VALUES('$username','$password','$role')";
     // if(!mysqli_query($conn,$sql)){
     //     die("Failed to create user: ".mysqli_error($conn));
@@ -66,8 +66,8 @@ if(isset($_POST['submit'])){
     <br><br>
 
     <div class="card bg-light">
-        <article class="card-body mx-auto" style="max-width: 400px;">
-            <h4 class="card-title mt-3 text-center">Create Account</h4>
+        <article class="card-body mx-auto" style="max-width: 600px;">
+            <h4 class="card-title mt-4 text-center">Create Account</h4>
             <p class="text-center">Get started with your free account</p>
             <form action="#" method="POST">
                 <div class="form-group input-group">
