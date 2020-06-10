@@ -53,8 +53,28 @@ FOREIGN KEY(BookingNo) REFERENCES Booking(bookingId));
 */
 
 
-insert into User('username','password','role') values('admin','21232f297a57a5a743894a0e4a801fc3','admin');
-insert into User(username,password,role) values('admin','21232f297a57a5a743894a0e4a801fc3','admin');
+-- insert into User('username','password','role') values('admin','21232f297a57a5a743894a0e4a801fc3','admin');
+-- insert into User(username,password,role) values('admin','21232f297a57a5a743894a0e4a801fc3','admin');
 
-insert into User('username','passowrd','role') values('abc','abc','customer');
-insert into Customer values('nic','namesda','addressafdad','231241',$mysqli_insert_id($conn),)
+-- insert into User('username','passowrd','role') values('abc','abc','customer');
+-- insert into Customer values('nic','namesda','addressafdad','231241',$mysqli_insert_id($conn),)
+
+
+INSERT INTO Vehicle(regNo,make,model,year,color,costPerDay,costPerWeek,CostPerMonth) VALUES('',);
+INSERT INTO Vehicle(regNo,make,model,year,color,costPerDay,costPerWeek,CostPerMonth) VALUES('',);
+INSERT INTO Vehicle(regNo,make,model,year,color,costPerDay,costPerWeek,CostPerMonth) VALUES('',);
+INSERT INTO Vehicle(regNo,make,model,year,color,costPerDay,costPerWeek,CostPerMonth) VALUES('',);
+INSERT INTO Vehicle(regNo,make,model,year,color,costPerDay,costPerWeek,CostPerMonth) VALUES('',);
+
+INSERT INTO User(username,password,role) VALUES('','','admin');
+INSERT INTO User(username,password,role) VALUES('','','admin');
+INSERT INTO User(username,password,role) VALUES('amal','','customer');
+INSERT INTO User(username,password,role) VALUES('kamal','','customer');
+INSERT INTO User(username,password,role) VALUES('saman','','customer');
+INSERT INTO User(username,password,role) VALUES('kasun','','customer');
+
+
+INSERT INTO Customer(nic,licenseNumber,FName,MName,LName,email,address,telephone,user_id) VALUES('889586748v','B9485766','Amal','K','Perera','amal@gmail.com','Kegalle',0712345432,);
+INSERT INTO Customer(nic,licenseNumber,FName,MName,LName,email,address,telephone,user_id) VALUES('889586748v','B9485766','Kamal','P','Peiris','kamal@gmail.com','Rathnapura',0712399432,);
+INSERT INTO Customer(nic,licenseNumber,FName,MName,LName,email,address,telephone,user_id) VALUES('889586748v','B9485766','Saman','N','Kumara','saman@gmail.com','Galle',0718845432,);
+INSERT INTO Customer(nic,licenseNumber,FName,MName,LName,email,address,telephone,user_id) VALUES('889586748v','B9485766','Kasun','S','Gomes','kasun@gmail.com','Negombo',0712365432,);

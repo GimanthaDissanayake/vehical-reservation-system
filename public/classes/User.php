@@ -5,7 +5,7 @@ class User
 {
     private $userName;
     private $password;
-    private $role = "customer";
+    private $role;
 
     //constructor
     function __construct()
@@ -14,9 +14,10 @@ class User
 
     //methods
 
-    public function insertUser($usename,$password){
+    public function insertUser($usename,$password,$role){
         $this->userName=$usename;
         $this->password=$password;
+        $this->role=$role;
         global $conn;
         $sql = "INSERT INTO User(username,password,role) VALUES('$this->userName','$this->password','$this->role')";
         if(!mysqli_query($conn,$sql)){

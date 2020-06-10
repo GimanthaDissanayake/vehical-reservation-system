@@ -50,7 +50,7 @@ class Customer{
         global $conn;
 
         $u = new User();
-        $u->insertUser($username,$password);
+        $u->insertUser($username,$password,'customer');
 
         $last_id = mysqli_insert_id($conn);
 
